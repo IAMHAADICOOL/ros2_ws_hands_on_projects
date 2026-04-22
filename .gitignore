@@ -1,6 +1,6 @@
 # Ignore everything in the root directory
 /*
-
+/src/hoi_control
 # Allow the src directory
 !/src/
 
