@@ -1,0 +1,1 @@
+/home/haadi/ROS2_Crash_Course/ros2_ws/src/build/depthimage_to_laserscan/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake

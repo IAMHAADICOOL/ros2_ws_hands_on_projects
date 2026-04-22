@@ -1,0 +1,11 @@
+# Ignore everything in the root directory
+/*
+
+# Allow the src directory
+!/src/
+
+# Allow the .gitignore file itself so your rules are saved
+!.gitignore
+
+# Optional: Allow a README if you have one in the root
+!/README.md

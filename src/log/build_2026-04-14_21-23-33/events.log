@@ -1,0 +1,209 @@
+[0.000000] (-) TimerEvent: {}
+[0.000124] (-) JobUnselected: {'identifier': 'cerveza_tb_planning'}
+[0.000151] (-) JobUnselected: {'identifier': 'kobuki_description'}
+[0.000168] (-) JobUnselected: {'identifier': 'lab1_1'}
+[0.000183] (-) JobUnselected: {'identifier': 'localisation'}
+[0.000196] (-) JobUnselected: {'identifier': 'octomap_rviz_plugins'}
+[0.000209] (-) JobUnselected: {'identifier': 'rtabmap'}
+[0.000221] (-) JobUnselected: {'identifier': 'rtabmap_conversions'}
+[0.000233] (-) JobUnselected: {'identifier': 'rtabmap_costmap_plugins'}
+[0.000245] (-) JobUnselected: {'identifier': 'rtabmap_demos'}
+[0.000257] (-) JobUnselected: {'identifier': 'rtabmap_examples'}
+[0.000270] (-) JobUnselected: {'identifier': 'rtabmap_launch'}
+[0.000282] (-) JobUnselected: {'identifier': 'rtabmap_msgs'}
+[0.000294] (-) JobUnselected: {'identifier': 'rtabmap_odom'}
+[0.000306] (-) JobUnselected: {'identifier': 'rtabmap_python'}
+[0.000318] (-) JobUnselected: {'identifier': 'rtabmap_ros'}
+[0.000330] (-) JobUnselected: {'identifier': 'rtabmap_rviz_plugins'}
+[0.000341] (-) JobUnselected: {'identifier': 'rtabmap_slam'}
+[0.000353] (-) JobUnselected: {'identifier': 'rtabmap_sync'}
+[0.000365] (-) JobUnselected: {'identifier': 'rtabmap_util'}
+[0.000381] (-) JobUnselected: {'identifier': 'rtabmap_viz'}
+[0.000393] (-) JobUnselected: {'identifier': 'scan_to_cloud2'}
+[0.000405] (-) JobUnselected: {'identifier': 'stonefish_ros2'}
+[0.000417] (-) JobUnselected: {'identifier': 'swiftpro_description'}
+[0.000429] (-) JobUnselected: {'identifier': 'turtlebot_description'}
+[0.000441] (-) JobUnselected: {'identifier': 'turtlebot_rviz'}
+[0.000452] (-) JobUnselected: {'identifier': 'turtlebot_simulation'}
+[0.000464] (-) JobUnselected: {'identifier': 'tutorial_interfaces'}
+[0.000485] (depthimage_to_laserscan) JobQueued: {'identifier': 'depthimage_to_laserscan', 'dependencies': OrderedDict()}
+[0.000506] (depthimage_to_laserscan) JobStarted: {'identifier': 'depthimage_to_laserscan'}
+[0.007163] (depthimage_to_laserscan) JobProgress: {'identifier': 'depthimage_to_laserscan', 'progress': 'cmake'}
+[0.007992] (depthimage_to_laserscan) Command: {'cmd': ['/usr/bin/cmake', '/home/haadi/ROS2_Crash_Course/ros2_ws/src/depthimage_to_laserscan', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/haadi/ROS2_Crash_Course/ros2_ws/src/install/depthimage_to_laserscan'], 'cwd': '/home/haadi/ROS2_Crash_Course/ros2_ws/src/build/depthimage_to_laserscan', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'LANGUAGE': 'en_IN:en', 'USER': 'haadi', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'WORK_DIR': '/home/haadi/DriveLM/pdm_lite', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/haadi', 'CONDA_SHLVL': '0', 'LEADERBOARD_ROOT': '/home/haadi/DriveLM/pdm_lite/leaderboard', 'OLDPWD': '/home/haadi/ROS2_Crash_Course/ros2_ws', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '4162', 'MAKEFLAGS': '-j6', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=94671d943cfd9bb0beac839d69d106ac', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/haadi/miniconda3', 'CARLA_ROOT': '/home/haadi/CARLA_0.9.15', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'haadi', 'IGN_GAZEBO_MODEL_PATH': '/opt/ros/jazzy/share', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'haadi', 'TERM': 'xterm-256color', 'WANDB_API_KEY': 'e05e8b3b63241ddffbf90dda3f56cf5c51936118', 'GAZEBO_MODEL_PATH': '/opt/ros/jazzy/share', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/haadi/miniconda3/condabin:/home/haadi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/terminator:@/tmp/.ICE-unix/4162,unix/terminator:/tmp/.ICE-unix/4162', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/62c9584b_4947_4366_96b1_d8e8502e5758', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.1553', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '1', 'SCENARIO_RUNNER_ROOT': '/home/haadi/DriveLM/pdm_lite/scenario_runner', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/haadi/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'SDL_VIDEODRIVER': 'x11', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', '_CONDA_EXE': '/home/haadi/miniconda3/bin/conda', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/haadi/ROS2_Crash_Course/ros2_ws/src/build/depthimage_to_laserscan', 'QT_QPA_PLATFORM': 'xcb', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/haadi/miniconda3/bin/conda', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=94671d943cfd9bb0beac839d69d106ac', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/home/haadi/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages:/home/haadi/CARLA_0.9.15/PythonAPI/carla/:/home/haadi/DriveLM/pdm_lite/scenario_runner:/home/haadi/DriveLM/pdm_lite/leaderboard::/home/haadi/CARLA_0.9.15/PythonAPI/carla:/home/haadi/Hands-on-Localisation/gtsam/build/python', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'SAVE_PATH': '/home/haad/carla_garage/results', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.060114] (depthimage_to_laserscan) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.098835] (-) TimerEvent: {}
+[0.112584] (depthimage_to_laserscan) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.129714] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199038] (-) TimerEvent: {}
+[0.220492] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.230109] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.230419] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.230768] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.241512] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.299212] (-) TimerEvent: {}
+[0.340761] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.346041] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.346162] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.346382] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.349496] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[0.399386] (-) TimerEvent: {}
+[0.467133] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.499537] (-) TimerEvent: {}
+[0.510094] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.540175] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found image_geometry: 4.1.0 (/opt/ros/jazzy/share/image_geometry/cmake)\n'}
+[0.576833] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.586908] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.598267] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.599601] (-) TimerEvent: {}
+[0.611002] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.664822] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found OpenCV: /usr/local (found version "4.14.0") found components: core \n'}
+[0.666646] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.699682] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.699755] (-) TimerEvent: {}
+[0.702127] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.780196] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[0.799835] (-) TimerEvent: {}
+[0.802601] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[0.826720] (depthimage_to_laserscan) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.876866] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found rclcpp_components: 28.1.16 (/opt/ros/jazzy/share/rclcpp_components/cmake)\n'}
+[0.899987] (-) TimerEvent: {}
+[0.900345] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY\n'}
+[0.993988] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY - Success\n'}
+[0.994760] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY\n'}
+[1.000100] (-) TimerEvent: {}
+[1.086653] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY - Success\n'}
+[1.086964] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Performing Test COMPILER_HAS_DEPRECATED_ATTR\n'}
+[1.100257] (-) TimerEvent: {}
+[1.183510] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success\n'}
+[1.190803] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[1.200429] (-) TimerEvent: {}
+[1.285539] (depthimage_to_laserscan) StdoutLine: {'line': b"-- Found gtest sources under '/opt/ros/jazzy/src/gtest_vendor': C++ tests using 'Google Test' will be built\n"}
+[1.287551] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.300610] (-) TimerEvent: {}
+[1.369934] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.371342] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.376779] (depthimage_to_laserscan) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[1.378469] (depthimage_to_laserscan) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.378553] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/haadi/ROS2_Crash_Course/ros2_ws/src/depthimage_to_laserscan/include>\n'}
+[1.378597] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.379997] (depthimage_to_laserscan) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[1.380066] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[1.380547] (depthimage_to_laserscan) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[1.380604] (depthimage_to_laserscan) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[1.381210] (depthimage_to_laserscan) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.381580] (depthimage_to_laserscan) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[1.383026] (depthimage_to_laserscan) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.383100] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.383509] (depthimage_to_laserscan) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.385552] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Configuring done (1.4s)\n'}
+[1.398314] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[1.400674] (-) TimerEvent: {}
+[1.402631] (depthimage_to_laserscan) StdoutLine: {'line': b'-- Build files have been written to: /home/haadi/ROS2_Crash_Course/ros2_ws/src/build/depthimage_to_laserscan\n'}
+[1.410305] (depthimage_to_laserscan) CommandEnded: {'returncode': 0}
+[1.410525] (depthimage_to_laserscan) JobProgress: {'identifier': 'depthimage_to_laserscan', 'progress': 'build'}
+[1.411187] (depthimage_to_laserscan) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/haadi/ROS2_Crash_Course/ros2_ws/src/build/depthimage_to_laserscan'], 'cwd': '/home/haadi/ROS2_Crash_Course/ros2_ws/src/build/depthimage_to_laserscan', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'LANGUAGE': 'en_IN:en', 'USER': 'haadi', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'WORK_DIR': '/home/haadi/DriveLM/pdm_lite', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/haadi', 'CONDA_SHLVL': '0', 'LEADERBOARD_ROOT': '/home/haadi/DriveLM/pdm_lite/leaderboard', 'OLDPWD': '/home/haadi/ROS2_Crash_Course/ros2_ws', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '4162', 'MAKEFLAGS': '-j6', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=94671d943cfd9bb0beac839d69d106ac', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/haadi/miniconda3', 'CARLA_ROOT': '/home/haadi/CARLA_0.9.15', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'haadi', 'IGN_GAZEBO_MODEL_PATH': '/opt/ros/jazzy/share', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'haadi', 'TERM': 'xterm-256color', 'WANDB_API_KEY': 'e05e8b3b63241ddffbf90dda3f56cf5c51936118', 'GAZEBO_MODEL_PATH': '/opt/ros/jazzy/share', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/haadi/miniconda3/condabin:/home/haadi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/terminator:@/tmp/.ICE-unix/4162,unix/terminator:/tmp/.ICE-unix/4162', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/62c9584b_4947_4366_96b1_d8e8502e5758', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.1553', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '1', 'SCENARIO_RUNNER_ROOT': '/home/haadi/DriveLM/pdm_lite/scenario_runner', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/haadi/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'SDL_VIDEODRIVER': 'x11', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', '_CONDA_EXE': '/home/haadi/miniconda3/bin/conda', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/haadi/ROS2_Crash_Course/ros2_ws/src/build/depthimage_to_laserscan', 'QT_QPA_PLATFORM': 'xcb', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/haadi/miniconda3/bin/conda', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=94671d943cfd9bb0beac839d69d106ac', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/home/haadi/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages:/home/haadi/CARLA_0.9.15/PythonAPI/carla/:/home/haadi/DriveLM/pdm_lite/scenario_runner:/home/haadi/DriveLM/pdm_lite/leaderboard::/home/haadi/CARLA_0.9.15/PythonAPI/carla:/home/haadi/Hands-on-Localisation/gtsam/build/python', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'SAVE_PATH': '/home/haad/carla_garage/results', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[1.462734] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/DepthImageToLaserScan.dir/src/DepthImageToLaserScan.cpp.o\x1b[0m\n'}
+[1.462933] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o\x1b[0m\n'}
+[1.463057] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o\x1b[0m\n'}
+[1.500803] (-) TimerEvent: {}
+[1.601020] (-) TimerEvent: {}
+[1.701300] (-) TimerEvent: {}
+[1.801596] (-) TimerEvent: {}
+[1.901800] (-) TimerEvent: {}
+[1.934405] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 33%] \x1b[32m\x1b[1mLinking CXX static library libgtest_main.a\x1b[0m\n'}
+[1.965524] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 33%] Built target gtest_main\n'}
+[2.001924] (-) TimerEvent: {}
+[2.102199] (-) TimerEvent: {}
+[2.202417] (-) TimerEvent: {}
+[2.302603] (-) TimerEvent: {}
+[2.402819] (-) TimerEvent: {}
+[2.503031] (-) TimerEvent: {}
+[2.603247] (-) TimerEvent: {}
+[2.703462] (-) TimerEvent: {}
+[2.780686] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 41%] \x1b[32m\x1b[1mLinking CXX shared library libDepthImageToLaserScan.so\x1b[0m\n'}
+[2.803623] (-) TimerEvent: {}
+[2.853589] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 41%] Built target DepthImageToLaserScan\n'}
+[2.870179] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/DepthImageToLaserScanROS.dir/src/DepthImageToLaserScanROS.cpp.o\x1b[0m\n'}
+[2.903706] (-) TimerEvent: {}
+[3.003910] (-) TimerEvent: {}
+[3.104188] (-) TimerEvent: {}
+[3.204459] (-) TimerEvent: {}
+[3.304657] (-) TimerEvent: {}
+[3.404844] (-) TimerEvent: {}
+[3.505068] (-) TimerEvent: {}
+[3.534907] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 58%] \x1b[32m\x1b[1mLinking CXX static library libgtest.a\x1b[0m\n'}
+[3.579900] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 58%] Built target gtest\n'}
+[3.597817] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/depthimage_to_laserscan-test.dir/test/DepthImageToLaserScanTest.cpp.o\x1b[0m\n'}
+[3.605227] (-) TimerEvent: {}
+[3.705494] (-) TimerEvent: {}
+[3.805687] (-) TimerEvent: {}
+[3.905910] (-) TimerEvent: {}
+[4.006133] (-) TimerEvent: {}
+[4.106406] (-) TimerEvent: {}
+[4.206690] (-) TimerEvent: {}
+[4.306916] (-) TimerEvent: {}
+[4.407192] (-) TimerEvent: {}
+[4.507486] (-) TimerEvent: {}
+[4.607769] (-) TimerEvent: {}
+[4.708047] (-) TimerEvent: {}
+[4.808263] (-) TimerEvent: {}
+[4.908539] (-) TimerEvent: {}
+[5.008732] (-) TimerEvent: {}
+[5.108949] (-) TimerEvent: {}
+[5.209301] (-) TimerEvent: {}
+[5.309586] (-) TimerEvent: {}
+[5.339888] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable depthimage_to_laserscan-test\x1b[0m\n'}
+[5.409674] (-) TimerEvent: {}
+[5.460236] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 75%] Built target depthimage_to_laserscan-test\n'}
+[5.509762] (-) TimerEvent: {}
+[5.609984] (-) TimerEvent: {}
+[5.710270] (-) TimerEvent: {}
+[5.810541] (-) TimerEvent: {}
+[5.910753] (-) TimerEvent: {}
+[6.010960] (-) TimerEvent: {}
+[6.111155] (-) TimerEvent: {}
+[6.211440] (-) TimerEvent: {}
+[6.311647] (-) TimerEvent: {}
+[6.411820] (-) TimerEvent: {}
+[6.511995] (-) TimerEvent: {}
+[6.612202] (-) TimerEvent: {}
+[6.712412] (-) TimerEvent: {}
+[6.812609] (-) TimerEvent: {}
+[6.912823] (-) TimerEvent: {}
+[7.013007] (-) TimerEvent: {}
+[7.113222] (-) TimerEvent: {}
+[7.213450] (-) TimerEvent: {}
+[7.313649] (-) TimerEvent: {}
+[7.413857] (-) TimerEvent: {}
+[7.514044] (-) TimerEvent: {}
+[7.614238] (-) TimerEvent: {}
+[7.714431] (-) TimerEvent: {}
+[7.814632] (-) TimerEvent: {}
+[7.914812] (-) TimerEvent: {}
+[8.015024] (-) TimerEvent: {}
+[8.115210] (-) TimerEvent: {}
+[8.215390] (-) TimerEvent: {}
+[8.315590] (-) TimerEvent: {}
+[8.415784] (-) TimerEvent: {}
+[8.516001] (-) TimerEvent: {}
+[8.616216] (-) TimerEvent: {}
+[8.716436] (-) TimerEvent: {}
+[8.779072] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX shared library libDepthImageToLaserScanROS.so\x1b[0m\n'}
+[8.816562] (-) TimerEvent: {}
+[8.916767] (-) TimerEvent: {}
+[8.994865] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 83%] Built target DepthImageToLaserScanROS\n'}
+[9.009636] (depthimage_to_laserscan) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding CXX object CMakeFiles/depthimage_to_laserscan_node.dir/src/depthimage_to_laserscan.cpp.o\x1b[0m\n'}
+[9.016857] (-) TimerEvent: {}
+[9.117134] (-) TimerEvent: {}
+[9.217433] (-) TimerEvent: {}
+[9.317650] (-) TimerEvent: {}
+[9.417868] (-) TimerEvent: {}
+[9.518140] (-) TimerEvent: {}
+[9.618421] (-) TimerEvent: {}
+[9.718724] (-) TimerEvent: {}
+[9.722248] (depthimage_to_laserscan) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/depthimage_to_laserscan_node.dir/build.make:76: CMakeFiles/depthimage_to_laserscan_node.dir/src/depthimage_to_laserscan.cpp.o] Interrupt\n'}
+[9.722403] (depthimage_to_laserscan) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:214: CMakeFiles/depthimage_to_laserscan_node.dir/all] Interrupt\n'}
+[9.722689] (depthimage_to_laserscan) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Interrupt\n'}
+[9.729814] (depthimage_to_laserscan) CommandEnded: {'returncode': -2}
+[9.736734] (depthimage_to_laserscan) JobEnded: {'identifier': 'depthimage_to_laserscan', 'rc': 'SIGINT'}
+[9.747047] (-) EventReactorShutdown: {}

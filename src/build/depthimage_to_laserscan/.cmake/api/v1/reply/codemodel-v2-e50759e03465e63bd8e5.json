@@ -1,0 +1,157 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-074e1c5e6b0d962e54d3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						7
+					]
+				},
+				{
+					"build" : "gtest",
+					"jsonFile" : "directory-gtest-0908a8c91ddba5d6c989.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "/opt/ros/jazzy/src/gtest_vendor",
+					"targetIndexes" : 
+					[
+						5,
+						6
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "depthimage_to_laserscan",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "gtest",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "DepthImageToLaserScan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DepthImageToLaserScan-5256a7d358220d176c92.json",
+					"name" : "DepthImageToLaserScan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DepthImageToLaserScanROS::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DepthImageToLaserScanROS-01a5e0d81f459faea21c.json",
+					"name" : "DepthImageToLaserScanROS",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "depthimage_to_laserscan-test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-depthimage_to_laserscan-test-1f5d388357a54700080e.json",
+					"name" : "depthimage_to_laserscan-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "depthimage_to_laserscan_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-depthimage_to_laserscan_node-1a7bdbd45c7a4b9ff663.json",
+					"name" : "depthimage_to_laserscan_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "depthimage_to_laserscan_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-depthimage_to_laserscan_uninstall-416c747e7ab07ab7c610.json",
+					"name" : "depthimage_to_laserscan_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "gtest::@0af4add9fe94340e763e",
+					"jsonFile" : "target-gtest-bba4f1182c9bc1d8f16c.json",
+					"name" : "gtest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "gtest_main::@0af4add9fe94340e763e",
+					"jsonFile" : "target-gtest_main-48c293a1d23a8814b8ad.json",
+					"name" : "gtest_main",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-466aea3bc727f7207cc2.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/haadi/ROS2_Crash_Course/ros2_ws/src/build/depthimage_to_laserscan",
+		"source" : "/home/haadi/ROS2_Crash_Course/ros2_ws/src/depthimage_to_laserscan"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
