@@ -1,6 +1,8 @@
 # Ignore everything in the root directory
 /*
-/src/hoi_control
+/src/frontier_exploration
+/src/frontier_interfaces
+/src/learned_frontier_detector
 # Allow the src directory
 !/src/
 
