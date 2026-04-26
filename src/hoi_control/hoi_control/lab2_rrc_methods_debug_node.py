@@ -103,8 +103,9 @@ MARKER_TOPIC      = '/hoi/rrc_methods_markers'
 # TF frame in which all world-frame positions are expressed (ENU = East-North-Up)
 WORLD_FRAME       = 'world_enu'
 
-# TF frame of the physical end-effector link (source of ground-truth EE position)
-EE_FRAME          = 'turtlebot/swiftpro/ee_link'
+# TF frame of the physical end-effector (published by the static_transform_publisher
+# in the launch file: parent=turtlebot/swiftpro/link8B, child=end_effector, z=0.0722)
+EE_FRAME          = 'end_effector'
 
 # TF frame of the arm's first joint / base (link1); used to convert between
 # world_enu and arm-local ENU by subtracting J1's world position
@@ -139,11 +140,11 @@ ID_TEXT     = 5   # WHITE  text    — method name, error magnitude, and goal in
 # seconds (default 30 s), demonstrating each RRC method on varied targets.
 GOAL_SEQUENCE = [
     np.array([-0.25,  0.00,  0.30]),   # goal 0: right of robot, medium height
-    np.array([ 0.00,  0.20,  0.35]),   # goal 1: directly in front, medium height
-    np.array([-0.15,  0.15,  0.28]),   # goal 2: front-right diagonal, lower
-    np.array([-0.10,  0.00,  0.40]),   # goal 3: right of robot, raised
-    np.array([ 0.00,  0.10,  0.30]),   # goal 4: front-centre, lower
-    np.array([-0.20,  0.10,  0.36]),   # goal 5: front-right, medium
+    np.array([ 0.00,  -0.25,  0.35]),   # goal 1: directly in front, medium height
+    np.array([-0.15,  -0.15,  0.28]),   # goal 2: front-right diagonal, lower
+    np.array([0.10,  0.00,  0.40]),   # goal 3: right of robot, raised
+    np.array([ 0.00,  -0.25,  0.30]),   # goal 4: front-centre, lower
+    np.array([-0.20,  -0.10,  0.36]),   # goal 5: front-right, medium
 ]
 
 # How long (seconds) the arm tries to reach each goal before cycling to the next
@@ -184,6 +185,7 @@ class Lab2RRCMethodsDebugNode(Node):
         self.declare_parameter('damping',   0.1)   # DLS lambda: higher = smoother near singularities
         self.declare_parameter('method',    1)     # active RRC method: 0=transpose, 1=pinv, 2=DLS
         self.declare_parameter('enabled',   True)  # False -> send zeros, arm holds still
+        #TODO Need to clarify what does this 'enabled' parameter do?
 
         # Goal cycling: whether to auto-advance goals and at what rate
         self.declare_parameter('goal_auto_cycle',   True)                    # enable/disable cycling
@@ -229,6 +231,7 @@ class Lab2RRCMethodsDebugNode(Node):
 
         # TransformListener subscribes to /tf and populates _tf_buffer automatically;
         # it needs a reference to `self` so it can use this node's clock and executor
+        # TODO Add an explanation of why self parameter is passed here?
         self._tf_listener = TransformListener(self._tf_buffer, self)
 
         # ── ROS I/O ───────────────────────────────────────────────────────
@@ -238,6 +241,7 @@ class Lab2RRCMethodsDebugNode(Node):
             JointState, JOINT_STATE_TOPIC, self._js_cb, 10)
 
         # Publisher for joint velocity commands; the controller reads this at ~60 Hz
+        # TODO What does the above statement mean?
         self.pub_cmd = self.create_publisher(Float64MultiArray, JOINT_CMD_TOPIC, 10)
 
         # Publisher for RViz debug markers (spheres, lines, text)
@@ -310,6 +314,7 @@ class Lab2RRCMethodsDebugNode(Node):
         # Re-read the period in case it was changed at runtime via ros2 param set.
         # timer_period_ns is the period this timer was created with (nanoseconds).
         period = float(self.get_parameter('goal_cycle_period').value)
+        # TODO What is the purpose of this line of code? Why do we need to re-read the period?
         if abs(self._goal_cycle_timer.timer_period_ns / 1e9 - period) > 0.5:
             # Period was changed by more than 0.5 s — recreate the timer.
             # ROS 2 timers cannot be reconfigured after creation, so we destroy
@@ -361,6 +366,7 @@ class Lab2RRCMethodsDebugNode(Node):
         mv     = self.get_parameter('max_vel').value     # joint velocity ceiling (rad/s)
         dam    = self.get_parameter('damping').value     # DLS damping factor lambda
         mth    = int(self.get_parameter('method').value) # integer selector: 0/1/2
+        # TODO Again, determine the purpose of the following variable
         ena    = self.get_parameter('enabled').value     # bool: if False, publish zeros
 
         # Pack the three scalars into a NumPy vector for later arithmetic
@@ -368,6 +374,7 @@ class Lab2RRCMethodsDebugNode(Node):
 
         # Convert the integer method selector to a human-readable label for logging
         # mth % 3 ensures any integer input maps into the valid range 0-2
+        # TODO Understand how the following line of code is working
         method_name = ['transpose', 'pseudoinverse', 'DLS'][mth % 3]
 
         # Orientation mode is active when target_yaw is a real number (not NaN).
@@ -536,30 +543,44 @@ class Lab2RRCMethodsDebugNode(Node):
             dq = scale_velocities(dq, mv)
 
             # ── Joint limit safety clamping ───────────────────────────────
-            # Zero out any velocity that would push a joint past its URDF
-            # hard limit minus the LIMIT_MARGIN safety buffer.
-            # This is a last-resort safety check on top of scale_velocities;
-            # it applies to all four active joints (q1-q4).
+            # PURPOSE: zero out any joint velocity that would push a joint past
+            # its URDF hard limit minus the LIMIT_MARGIN safety buffer.
+            # Without this, the RRC controller will keep commanding positive dq
+            # into a saturated joint, wasting the commanded velocity on a joint
+            # that physically cannot move — which you observed above: q1 pinned
+            # at 1.571 rad while err_norm stalled at ~0.054 m permanently.
+            #
+            # After uncommenting, the block reads joint angles from self.arm.q
+            # and zeroes out dq_arr[i] whenever joint i is within LIMIT_MARGIN
+            # of either its lower or upper URDF limit AND the velocity would
+            # push it further past that limit.  Adjust LIMIT_MARGIN (line ~117)
+            # to change the buffer size; the default is 0.07 rad (~4 degrees).
+            #
+            # WHEN TO LEAVE IT COMMENTED:
+            #   During experiments where you deliberately want to observe what
+            #   happens when the controller hits a joint limit unconstrained
+            #   (e.g. to study steady-state error, limit-cycling behaviour, or
+            #   to verify that the goals in GOAL_SEQUENCE are inside the
+            #   reachable workspace before re-enabling the clamp).
             dq_arr = dq.flatten()   # collapse to 1-D for indexed assignment
             q      = self.arm.q     # current joint angles [q1, q2, q3, q4]
-            m = LIMIT_MARGIN        # shorthand for readability
+            m = LIMIT_MARGIN        # shorthand: LIMIT_MARGIN radians inside each hard limit
 
-            # joint1 (base yaw, +-pi/2): clamp if at lower limit moving further negative,
-            # or at upper limit moving further positive
-            if q[0] <= Q1_MIN + m and dq_arr[0] < 0: dq_arr[0] = 0.0
-            if q[0] >= Q1_MAX - m and dq_arr[0] > 0: dq_arr[0] = 0.0
+            # joint1 (base yaw, +-pi/2)
+            # if q[0] <= Q1_MIN + m and dq_arr[0] < 0: dq_arr[0] = 0.0
+            # if q[0] >= Q1_MAX - m and dq_arr[0] > 0: dq_arr[0] = 0.0
 
-            # joint2 (shoulder, -pi/2 to +0.05): same logic
-            if q[1] <= Q2_MIN + m and dq_arr[1] < 0: dq_arr[1] = 0.0
-            if q[1] >= Q2_MAX - m and dq_arr[1] > 0: dq_arr[1] = 0.0
+            # joint2 (shoulder, -pi/2 to +0.05)
+            # if q[1] <= Q2_MIN + m and dq_arr[1] < 0: dq_arr[1] = 0.0
+            # if q[1] >= Q2_MAX - m and dq_arr[1] > 0: dq_arr[1] = 0.0
 
-            # joint3 (elbow, -pi/2 to +0.05): same logic
-            if q[2] <= Q3_MIN + m and dq_arr[2] < 0: dq_arr[2] = 0.0
-            if q[2] >= Q3_MAX - m and dq_arr[2] > 0: dq_arr[2] = 0.0
+            # joint3 (elbow, -pi/2 to +0.05)
+            # if q[2] <= Q3_MIN + m and dq_arr[2] < 0: dq_arr[2] = 0.0
+            # if q[2] >= Q3_MAX - m and dq_arr[2] > 0: dq_arr[2] = 0.0
 
-            # joint4 (EE yaw, +-pi/2): same logic
-            if q[3] <= Q4_MIN + m and dq_arr[3] < 0: dq_arr[3] = 0.0
-            if q[3] >= Q4_MAX - m and dq_arr[3] > 0: dq_arr[3] = 0.0
+            # joint4 (EE yaw, +-pi/2)
+            # if q[3] <= Q4_MIN + m and dq_arr[3] < 0: dq_arr[3] = 0.0
+            # if q[3] >= Q4_MAX - m and dq_arr[3] > 0: dq_arr[3] = 0.0
 
             # Pack joint velocities into the message and publish.
             # cmd.data must have exactly one value per controlled joint: [dq1, dq2, dq3, dq4]

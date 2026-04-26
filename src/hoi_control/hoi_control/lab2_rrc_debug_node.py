@@ -72,7 +72,7 @@ class Lab2RRCDebugNode(Node):
         self.declare_parameter('max_vel',   0.3)    # conservative velocity limit
         self.declare_parameter('damping',   0.1)    # DLS damping
         self.declare_parameter('method',    1)      # 0=transpose,1=pinv,2=DLS
-        self.declare_parameter('enabled',   True)   # master enable/disable
+        self.declare_parameter('enabled',   False)   # master enable/disable
 
         # Manual mode: directly command joint velocities for calibration
         self.declare_parameter('manual_mode', False)  # if True, use manual dq
@@ -119,6 +119,23 @@ class Lab2RRCDebugNode(Node):
             return np.array([tr.x, tr.y, tr.z])
         except (LookupException, ConnectivityException, ExtrapolationException):
             return None
+        
+    def _tf_rotation(self, child_frame):
+        """Get the 3x3 rotation matrix of child_frame in world_enu."""
+        try:
+            t = self._tf_buffer.lookup_transform(
+                WORLD_FRAME, child_frame, rclpy.time.Time())
+            q = t.transform.rotation
+            # Convert quaternion to rotation matrix
+            x, y, z, w = q.x, q.y, q.z, q.w
+            R = np.array([
+                [1-2*(y*y+z*z),   2*(x*y-z*w),   2*(x*z+y*w)],
+                [  2*(x*y+z*w), 1-2*(x*x+z*z),   2*(y*z-x*w)],
+                [  2*(x*z-y*w),   2*(y*z+x*w), 1-2*(x*x+y*y)]
+            ])
+            return R
+        except (LookupException, ConnectivityException, ExtrapolationException):
+            return None
 
     # ── Main loop ─────────────────────────────────────────────────────────
 
@@ -159,13 +176,28 @@ class Lab2RRCDebugNode(Node):
         # ── Position error: TF-based (THE KEY FIX) ───────────────────────
         # We use the TRUE EE position from TF, NOT the FK estimate.
         # This means even if FK is wrong, the error vector points correctly.
-        if ee_world_enu is not None and self._j1_world_enu is not None:
-            ee_arm_enu     = ee_world_enu - self._j1_world_enu   # TF, arm-local ENU
-            target_arm_enu = target_world_enu - self._j1_world_enu
-            err            = (target_arm_enu - ee_arm_enu).reshape(3, 1)
-            err_norm       = float(np.linalg.norm(err))
-            fk_vs_tf       = float(np.linalg.norm(fk_arm_enu - ee_arm_enu)) * 1000
+        # Get live rotation of link1 (arm base frame orientation in world_enu)
+        R_link1 = self._tf_rotation(J1_FRAME)
+
+        if ee_world_enu is not None and self._j1_world_enu is not None and R_link1 is not None:
+            ee_disp     = ee_world_enu     - self._j1_world_enu
+            target_disp = target_world_enu - self._j1_world_enu
+            
+            # R_link1.T rotates world_enu displacements into arm-local FK frame
+            ee_arm_enu     = R_link1.T @ ee_disp
+            target_arm_enu = R_link1.T @ target_disp
+            
+            pos_err  = (target_arm_enu - ee_arm_enu).reshape(3, 1)
+            err_norm = float(np.linalg.norm(pos_err))
+            fk_vs_tf_mm = float(np.linalg.norm(fk_arm_enu - ee_arm_enu)) * 1000
             position_source = 'TF'
+        # if ee_world_enu is not None and self._j1_world_enu is not None:
+        #     ee_arm_enu     = ee_world_enu - self._j1_world_enu   # TF, arm-local ENU
+        #     target_arm_enu = target_world_enu - self._j1_world_enu
+        #     err            = (target_arm_enu - ee_arm_enu).reshape(3, 1)
+        #     err_norm       = float(np.linalg.norm(err))
+        #     fk_vs_tf       = float(np.linalg.norm(fk_arm_enu - ee_arm_enu)) * 1000
+        #     position_source = 'TF'
         else:
             # Fallback to FK if TF unavailable
             target_arm_enu = (target_world_enu - self._j1_world_enu
